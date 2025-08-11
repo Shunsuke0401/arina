@@ -144,6 +144,13 @@ p { font-size: clamp(16px, 4vw, 18px); line-height: 1.6; }
   animation: type 4s steps(30, end), blink 1s step-end infinite;
   font-size: clamp(20px, 6vw, 32px);
 }
+.typewriter-mobile { display: none; }
+.typewriter-desktop { display: block; }
+@media (max-width: 480px) {
+  .typewriter-mobile { display: block; }
+  .typewriter-desktop { display: none; }
+  .typewriter::after { font-size: clamp(18px, 5vw, 24px); }
+}
 @media (prefers-reduced-motion: reduce) {
   .typewriter::after { animation: none; border-right: none; }
 }
