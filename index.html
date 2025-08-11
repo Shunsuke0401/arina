@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex,nofollow">
+    <title>A Little Story Just For You</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Dancing+Script:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Audio element (hidden) -->
+    <audio id="chimeSound" preload="auto">
+        <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmMcDDWH0+/ejUQJEGG8+fGhVw0LVJzh6ZdWEAg7k9T1zH0vBSh+zPLeizsIGGm98OOYTAwOWKzl8bNjHgg2hM/z5HU2Bi9/wfXghzsIGGi59t2QQAoPYbno8a2hVQ0LVJzj65pYEAo==" type="audio/wav">
+    </audio>
+
+    <!-- Audio Toggle Button -->
+    <button id="audioToggle" class="audio-toggle" aria-label="Toggle audio">
+        <svg class="audio-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+        </svg>
+        <svg class="audio-muted-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display: none;">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <line x1="23" y1="9" x2="17" y2="15"></line>
+            <line x1="17" y1="9" x2="23" y2="15"></line>
+        </svg>
+    </button>
+
+    <!-- Slideshow Container -->
+    <div class="slideshow-container">
+        <!-- Slide 1: Intro -->
+        <div class="slide active" data-slide="0">
+            <div class="slide-content intro-slide">
+                <div class="sparkles"></div>
+                <h1 class="typewriter" data-text="There's a little story I've been keeping just for you…"></h1>
+                <div class="intro-arrow" onclick="nextSlide()">→</div>
+            </div>
+        </div>
+
+        <!-- Slide 2: How we met -->
+        <div class="slide" data-slide="1">
+            <div class="slide-content">
+                <div class="polaroid">
+                    <div class="photo-placeholder">
+                        <img src="arina1.png" alt="Our first photo together" class="actual-photo">
+                    </div>
+                    <div class="polaroid-caption">The beginning ✨</div>
+                </div>
+                <p class="slide-text">From the first time we talked, something felt different.</p>
+            </div>
+        </div>
+
+        <!-- Slide 3: Favorite moments -->
+        <div class="slide" data-slide="2">
+            <div class="slide-content">
+                <h2>These tiny moments made my days bigger</h2>
+                <div class="moments-grid">
+                    <div class="moment-card">
+                        <div class="moment-image">💕</div>
+                        <p>When you were so shy but still told me "I love you" for the first time.</p>
+                    </div>
+                    <div class="moment-card">
+                        <div class="moment-image">🚿</div>
+                        <p>When you call me right after getting out of the shower.</p>
+                    </div>
+                    <div class="moment-card">
+                        <div class="moment-image">🎮</div>
+                        <p>When I absolutely cooked on モバレ.</p>
+                    </div>
+                    <div class="moment-card">
+                        <div class="moment-image">📞</div>
+                        <p>When you wanted to call me but couldn't bring yourself to say it.</p>
+                    </div>
+                </div>
+                <p class="moments-more">and so much more...</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Why you're amazing -->
+        <div class="slide" data-slide="3">
+            <div class="slide-content">
+                <h2>Why you're absolutely amazing</h2>
+                <div class="amazing-list">
+                    <div class="amazing-item" style="animation-delay: 0.2s">
+                        <span class="heart-icon">💖</span>
+                        <span>You make me feel like the most special person in the world.</span>
+                    </div>
+                    <div class="amazing-item" style="animation-delay: 0.4s">
+                        <span class="heart-icon">😊</span>
+                        <span>You can make me smile.</span>
+                    </div>
+                    <div class="amazing-item" style="animation-delay: 0.6s">
+                        <span class="heart-icon">🥰</span>
+                        <span>You’re effortlessly cute, without even trying.</span>
+                    </div>
+                    <div class="amazing-item" style="animation-delay: 0.8s">
+                        <span class="heart-icon">🫶</span>
+                        <span>You act like you don't care, but you are genuinely a caring person.</span>
+                    </div>
+                    <div class="amazing-item" style="animation-delay: 1.0s">
+                        <span class="heart-icon">🌟</span>
+                        <span>You make boring days exciting.</span>
+                    </div>
+                </div>
+                <p class="amazing-more">SO MUCH MORE!!!</p>
+            </div>
+        </div>
+
+        <!-- Slide 5: The distance -->
+        <div class="slide" data-slide="4">
+            <div class="slide-content">
+                <h2>Even miles apart, you still feel close</h2>
+                <div class="map-container">
+                    <svg class="distance-map" viewBox="0 0 400 200">
+                        <defs>
+                            <filter id="glow">
+                                <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                                <feMerge> 
+                                    <feMergeNode in="coloredBlur"/>
+                                    <feMergeNode in="SourceGraphic"/>
+                                </feMerge>
+                            </filter>
+                        </defs>
+                        <circle cx="100" cy="100" r="8" fill="var(--primary-color)" class="location-dot me">
+                            <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+                        </circle>
+                        <circle cx="300" cy="100" r="8" fill="var(--accent-color)" class="location-dot you">
+                            <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite" begin="1s"/>
+                        </circle>
+                        <path class="connection-line" d="M 100 100 Q 200 50 300 100" stroke="url(#lineGradient)" stroke-width="3" fill="none" filter="url(#glow)">
+                            <animate attributeName="stroke-dasharray" values="0,1000;200,1000" dur="3s" repeatCount="indefinite"/>
+                        </path>
+                        <defs>
+                            <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" style="stop-color:var(--primary-color);stop-opacity:1" />
+                                <stop offset="100%" style="stop-color:var(--accent-color);stop-opacity:1" />
+                            </linearGradient>
+                        </defs>
+                        <text x="100" y="130" text-anchor="middle" fill="var(--primary-color)" font-size="12">Me</text>
+                        <text x="300" y="130" text-anchor="middle" fill="var(--accent-color)" font-size="12">You</text>
+                    </svg>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: The question -->
+        <div class="slide" data-slide="5">
+            <div class="slide-content question-slide">
+                <div class="question-container">
+                    <h2 class="question-line-1">So… there's something I've been wanting to ask.</h2>
+                    <h2 class="question-line-2">Will you be my girlfriend? ❤️</h2>
+                    <div class="question-photo">
+                        <img src="arina2.png" alt="Special moment" class="question-image">
+                    </div>
+                    <div class="answer-buttons">
+                        <a href="https://instagram.com/sk.__nx" target="_blank" class="answer-btn call-btn">Call to answer 📞</a>
+                    </div>
+                </div>
+                <div class="success-message" id="successMessage">
+                    <h3>You just made my day! 🥰</h3>
+                    <div class="floating-hearts"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Navigation arrows -->
+        <button class="nav-arrow prev-arrow" onclick="prevSlide()" aria-label="Previous slide">‹</button>
+        <button class="nav-arrow next-arrow" onclick="nextSlide()" aria-label="Next slide">›</button>
+
+        <!-- Progress dots -->
+        <div class="progress-dots">
+            <span class="progress-dot active" onclick="goToSlide(0)"></span>
+            <span class="progress-dot" onclick="goToSlide(1)"></span>
+            <span class="progress-dot" onclick="goToSlide(2)"></span>
+            <span class="progress-dot" onclick="goToSlide(3)"></span>
+            <span class="progress-dot" onclick="goToSlide(4)"></span>
+            <span class="progress-dot" onclick="goToSlide(5)"></span>
+        </div>
+    </div>
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <script src="app.js"></script>
+</body>
+</html>
